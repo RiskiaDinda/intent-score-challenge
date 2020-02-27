@@ -33,7 +33,6 @@ public class MatchActivity extends AppCompatActivity {
     private String name = "";
     private TextView nameScorerHome, nameScorerAway;
     private String returnString;
-    private String nameList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,9 +93,8 @@ public class MatchActivity extends AppCompatActivity {
                 scoreHome.setText(String.valueOf(homeScore));
 
                 returnString = data.getStringExtra("scorerName");
-                name = returnString;
-                nameList = nameScorerHome.getText().toString();
-                nameScorerHome.setText(name +"\n"+nameList);
+                name = returnString + "\n"+nameScorerHome.getText().toString();
+                nameScorerHome.setText(name);
             }
         }else if (requestCode == 2){
             if (resultCode == RESULT_OK) {
@@ -104,9 +102,8 @@ public class MatchActivity extends AppCompatActivity {
                 scoreAway.setText(String.valueOf(awayScore));
 
                 returnString = data.getStringExtra("scorerName");
-                name = returnString;
-                nameList = nameScorerAway.getText().toString();
-                nameScorerAway.setText(String.valueOf(name +"\n"+nameList));
+                name = returnString + "\n"+nameScorerAway.getText().toString();
+                nameScorerAway.setText(name);
             }
         }
     }
